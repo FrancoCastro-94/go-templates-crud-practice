@@ -1,0 +1,32 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+    {{ template "Menu" }} 
+
+    <br>
+    <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h2>Edit Name and Email</h2>  <br>
+       <form method="POST" action="update">
+          <input type="hidden" name="uid" value="{{ .Id }}" />
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+            <input type="text" class="form-control" type="text" name="name" value="{{ .Name }}"></div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+            <input type="text" class="form-control" type="text" name="lastName" value="{{ .LastName }}"></div>
+          <div class="mb-3">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
+            <input type="text" class="form-control" type="text" name="number" value="{{ .Number }}"></div>
+          <div class="mb-3">
+            <input class="btn btn-success" type="submit" value="Save user" />
+          </div>
+        </form>
+      </div>
+    <div class="col-4"></div>
+  </div>  
+
+
+  {{ template "Footer" }}
+{{ end }}

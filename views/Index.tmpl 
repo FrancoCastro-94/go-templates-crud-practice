@@ -1,0 +1,39 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-10">
+    <h2> Registered </h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td scope="col">ID</td>
+          <td scope="col">Name</td>
+          <td scope="col">Last Name</td>
+          <td scope="col">Number</td>
+          <td scope="col">Edit</td>
+          <td scope="col">View</td>
+          <td scope="col">Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range . }}
+          <tr>
+            <td>{{ .Id }}</td>
+            <td> {{ .Name }} </td>
+            <td>{{ .LastName }} </td> 
+            <td>{{ .Number }} </td> 
+            <td><a class="btn btn-primary" href="/edit?id={{ .Id }}">Edit</a></td>
+            <td><a class="btn btn-secondary" href="/show?id={{ .Id }}">View</a></td>
+            <td><a class="btn btn-danger" href="/delete?id={{ .Id }}">Delete</a><td>
+          </tr>
+        {{ end }} 
+      </tbody>
+    </table>
+    </div>
+    </div>
+    
+  {{ template "Footer" }}
+{{ end }}

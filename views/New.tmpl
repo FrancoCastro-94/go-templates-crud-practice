@@ -1,0 +1,29 @@
+{{ define "New" }}
+  {{ template "Header" }}
+    {{ template "Menu" }}
+
+     <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h2>New Name and City</h2>  
+          <form method="POST" action="insert">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+              <input type="text" class="form-control" type="text" name="name"></div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+              <input type="text" class="form-control" type="text" name="lastName"></div>
+             <div class="input-group mb-3"> 
+              <span class="input-group-text" id="inputGroup-sizing-default">Number</span>
+              <input type="text" class="form-control" type="text" name="number">
+            </div>
+            <div class="mb-3">
+              <input class="btn btn-success" type="submit" value="Save user" />
+            </div>
+          </form>
+        </div>
+      <div class="col-4"></div>
+    </div>
+
+  {{ template "Footer" }}
+{{ end }}

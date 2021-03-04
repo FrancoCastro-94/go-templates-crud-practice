@@ -1,0 +1,32 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+
+    <br>
+      <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+              <h2> Register {{ .Id }} </h2>
+              <table class="table table-striped">
+                <thead>
+                      <tr>
+                          <td scope="col">Name</td>
+                          <td scope="col">Last Name</td>
+                      </tr>
+                </thead>
+              
+                <tbody>
+                    <tr>
+                        <td>Name: {{ .Name }}</td>
+                        <td>LastName:  {{ .LastName }}</td>
+                    </tr>
+                </tbody>
+              </table>
+              <a class="btn btn-primary" href="/edit?id={{ .Id }}">Edit</a></p>
+          </div>
+          <div class="col-4"></div>
+      </div>
+
+  {{ template "Footer" }}
+  
+{{ end }}
